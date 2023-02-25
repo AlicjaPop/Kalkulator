@@ -1,14 +1,8 @@
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-def add(x, y):
-    return x + y
-
 def subtract(x, y):
     return x - y
-
-def multiply(x, y):
-    return x * y
 
 def divide(x, y):
     return x / y
@@ -17,13 +11,15 @@ operation=input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dod
 
 for text in operation:
     if text=="1":
-        num_1=input("Podaj pierwszą liczbę:")
-        num_2=input("Podaj drugą liczbę:")
+        num_text=input("Podaj liczby, które chcesz do siebie dodać, rozgraniczając je przecinkiem:")
         try:
-            num_1=float(num_1)
-            num_2=float(num_2) 
-            logging.debug(f"Dodaję liczby {num_1} oraz {num_2}")
-            print("Wynik to:", add(num_1,num_2))
+            num_list=num_text.split(",")
+            result=0
+            for num in num_list:
+                num=float(num)
+                result=result+num
+            logging.debug(f"Dodaję liczby {num_list}")
+            print(f"Wynik to: {result}.")
         except ValueError:
             logging.debug("Podano nieprawidłową wartość.")
             continue
@@ -39,13 +35,15 @@ for text in operation:
             logging.debug("Podano nieprawidłową wartość.")
             continue
     elif text=="3":
-        num_1=input("Podaj pierwszą liczbę:")
-        num_2=input("Podaj drugą liczbę:")
+        num_text=input("Podaj liczby, które chcesz przez siebie pomonożyć, rozgraniczając je przecinkiem:")
         try:
-            num_1=float(num_1)
-            num_2=float(num_2) 
-            logging.debug(f"Mnożę liczbę {num_1} przez liczbę {num_2}") 
-            print("Wynik to:", multiply(num_1,num_2))
+            num_list=num_text.split(",")
+            result=1
+            for num in num_list:
+                num=float(num)
+                result=result*num 
+            logging.debug(f"Mnożę liczby {num_list}.") 
+            print(f"Wynik to: {result}.")
         except ValueError:
             logging.debug("Podano nieprawidłową wartość.")
             continue
