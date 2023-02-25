@@ -5,7 +5,7 @@ operation=input("Podaj działanie, posługując się odpowiednią liczbą: 1 Dod
 
 for text in operation:
     if text=="1":
-        num_text=input("Podaj liczby, które chcesz do siebie dodać, rozgraniczając je przecinkiem:")
+        num_text=input("Podaj liczby, które chcesz do siebie dodać, rozgraniczając je przecinkiem (np.: 1,2,3):")
         try:
             num_list=num_text.split(",")
             result=0
@@ -29,7 +29,7 @@ for text in operation:
             logging.debug("Podano nieprawidłową wartość - należy podać liczbę.")
             continue
     elif text=="3":
-        num_text=input("Podaj liczby, które chcesz przez siebie pomnożyć, rozgraniczając je przecinkiem:")
+        num_text=input("Podaj liczby, które chcesz przez siebie pomnożyć, rozgraniczając je przecinkiem (np.: 1,2,3):")
         try:
             num_list=num_text.split(",")
             result=1
